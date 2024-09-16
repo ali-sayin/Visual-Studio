@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorite Song</title>
+
+  <!-- CSS Styling -->
+  <style>
+    body {
+      font-family: 'Verdana', sans-serif;
+      background-color: #ffebcd;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #8b0000;
+      margin: 20px 0;
+    }
+
+    .video-wrapper {
+      margin: 20px auto;
+      border: 5px solid #8b0000;
+      border-radius: 15px;
+      overflow: hidden;
+      width: 640px;
+      height: 360px;
+    }
+
+    /* CSS for animation */
+    #animateText {
+      font-size: 1.5em;
+      color: #8b0000;
+      margin-top: 30px;
+      position: relative;
+    }
+
+    @keyframes slideIn {
+      from { left: -300px; }
+      to { left: 0; }
+    }
+
+    /* Button styling */
+    #startAnimation {
+      padding: 10px 20px;
+      background-color: #8b0000;
+      color: #fff;
+      border: none;
+      font-size: 1.2em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Enjoy My Favorite Song!</h1>
+
+  <!-- YouTube video embed -->
+  <div class="video-wrapper">
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/f8jXO946eDw" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Animated Text -->
+  <div id="animateText">Click the button to slide in!</div>
+
+  <!-- Button to trigger animation -->
+  <button id="startAnimation">Start Animation</button>
+
+  <!-- JavaScript for animation -->
+  <script>
+    document.getElementById("startAnimation").addEventListener("click", function() {
+      var text = document.getElementById("animateText");
+      text.style.position = "relative";
+      text.style.animation = "slideIn 2s forwards";
+    });
+  </script>
+
+</body>
+</html>
